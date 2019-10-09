@@ -1,0 +1,88 @@
+@import './variables.scss';
+
+@mixin light-text {
+    color: white;
+}
+
+@mixin raized {
+    box-shadow: 1px 3px 6px #00000040;
+}
+
+@mixin raized-mediun {
+    box-shadow: 1px 3px 12px #00000040;
+}
+
+@mixin raized-hard {
+    box-shadow: 1px 3px 18px 3px #00000040;
+}
+
+.electric {
+    background-color: $electric;
+    @include light-text;
+}
+
+.electric-type {
+    background-color: $electric-type;
+    @include light-text;
+}
+
+.fire {
+    background-color: $fire;
+    @include light-text;
+}
+
+.fire-type {
+    background-color: $fire-type;
+    @include light-text;
+}
+
+.grass {
+    background-color: $grass;
+    @include light-text;
+}
+
+.grass-type {
+    background-color: $grass-type;
+    @include light-text;
+}
+
+.poison {
+    background-color: $poison;
+    @include light-text;
+}
+
+.poison-type {
+    background-color: $poison-type;
+    @include light-text;
+}
+
+.rock {
+    background-color: $rock;
+    @include light-text;
+}
+
+.rock-type {
+    background-color: $rock-type;
+    @include light-text;
+}
+
+.water {
+    background-color: $water;
+    @include light-text;
+}
+
+.water-type {
+    background-color: $water-type;
+    @include light-text;
+}
+
+button {
+    background-color: none;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 36px;
+    min-width: 64px;
+    padding: 0 16px;
+    text-align: center;
+    transition: 300ms box-shadow cubic-bezier(0.4, 0.0, 0.2, 1);
+}
