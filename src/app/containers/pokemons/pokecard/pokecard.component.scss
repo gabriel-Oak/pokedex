@@ -1,0 +1,61 @@
+.data {
+  color: white;
+  text-transform: Capitalize;
+  display: flex;
+
+  div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .grass {
+    background: #15b48d;
+  }
+
+  .water {
+    background: #27bcff;
+  }
+
+  .poison {
+    background: #cd3af3;
+  }
+
+  .fire {
+    background: #ff784d;
+  }
+
+  .electric {
+    background: #ffd000;
+  }
+
+  .rock {
+    background: #8d5541;
+  }
+
+  .flying {
+    background: #48b5f3;
+  }
+
+  .normal {
+    background: #d1aa00;
+  }
+
+  .bug {
+    background: #0ccc66;
+  }
+}
+
+.chip {
+  border-radius: 20px;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px 0;
+  width: 84px;
+  margin-bottom: 4px;
+}
+
+.name {
+    text-transform: capitalize;
+    font-size: 24px;
+}

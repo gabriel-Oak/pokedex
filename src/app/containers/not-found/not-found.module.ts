@@ -11,7 +11,6 @@ import { AppService } from 'src/app/core/services/app/app.service';
   imports: [
     CommonModule,
     NotFoundRoutingModule
-  ],
-  providers: [AppService]
+  ]
 })
 export class NotFoundModule { }

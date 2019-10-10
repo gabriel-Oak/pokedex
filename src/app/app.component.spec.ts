@@ -33,4 +33,9 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     expect(app).toBeTruthy();
   });
+
+  it('Deve mudar o estado do menu', () => {
+    app.toggleMenu();
+    expect(app.menuState).toBe(true);
+  });
 });

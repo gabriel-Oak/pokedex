@@ -10,9 +10,10 @@ import { configParticles } from './core/particlesjs-config';
 })
 export class AppComponent {
 
+    menuState: boolean;
+
     width = 100;
     height = 100;
-
     myStyle = {
         position: 'absolute',
         width: '100%',
@@ -28,5 +29,9 @@ export class AppComponent {
     constructor(
         public app: AppService,
     ) { }
+
+    toggleMenu() {
+        this.menuState = !this.menuState;
+    }
 
 }

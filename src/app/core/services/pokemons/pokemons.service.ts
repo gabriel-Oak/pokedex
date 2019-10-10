@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -35,5 +36,9 @@ export class PokemonsService {
       .subscribe(
         res => this.pokemons = res
       );
+  }
+
+  getPokemon(url: string): Observable<any> {
+    return this.http.get(url);
   }
 }

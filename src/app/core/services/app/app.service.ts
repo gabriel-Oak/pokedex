@@ -8,8 +8,8 @@ export class AppService {
     title: string;
 
     constructor() {
-        this.headerClass = 'default';
         this.title = '';
+        this.headerClass = 'default';
     }
 
     setClass(headerClass: string): void {

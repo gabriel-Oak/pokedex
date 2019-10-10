@@ -3,36 +3,54 @@
 </div>
 
 <div class="pokedex-container">
-  <div class="pokedex-menu">
+  <div 
+    class="pokedex-menu"
+    [ngClass]="{'menu-closed': !menuState}"
+  >
     <h1>Pokedex Alfred®</h1>
     <div class="menu-itens">
-      <button class="grass" [routerLink]="['pokemons']">
+      <button class="grass" (click)="toggleMenu()" [routerLink]="['pokemons']">
         Pokemons
       </button>
 
-      <button class="water" [routerLink]="['movies']">
+      <button class="water" (click)="toggleMenu()" [routerLink]="['movies']">
         Filmes
       </button>
 
-      <button class="electric" [routerLink]="['ability']">
+      <button class="electric" (click)="toggleMenu()" [routerLink]="['ability']">
         Habilidades
       </button>
 
-      <button class="fire" [routerLink]="['itens']">
+      <button class="fire" (click)="toggleMenu()" [routerLink]="['itens']">
         Itens
       </button>
 
-      <button class="poison" [routerLink]="['types']">
+      <button class="poison" (click)="toggleMenu()" [routerLink]="['types']">
         Tipos
       </button>
 
-      <button class="rock" [routerLink]="['berries']">
+      <button class="rock" (click)="toggleMenu()" [routerLink]="['berries']">
         Berries
       </button>
     </div>
   </div>
-
+<!-- <div [ngSwitch]="conditionExpression">
+  <div *ngSwitchCase="expression">output</div>
+  <div *ngSwitchDefault>output2</div>
+</div> -->
   <div class="pokedex-content">
+    <button 
+      class="menu-button" 
+      (click)="toggleMenu()" 
+      [ngSwitch]="!!menuState"
+    >
+      <i class="material-icons" *ngSwitchCase="false">
+        menu
+      </i>
+      <i class="material-icons" *ngSwitchCase="true">
+        arrow_back
+      </i>
+    </button>
     <header class="title-header">
       <div class="divider"></div>
       <h1>{{app?.title}}</h1>

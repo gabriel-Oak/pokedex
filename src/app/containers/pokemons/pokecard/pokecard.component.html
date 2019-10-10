@@ -1,0 +1,20 @@
+<div [class]="color">
+  <div class="name">
+    {{ inputData?.name }}
+  </div>
+
+  <div class="data">
+    <div>
+      <div 
+        *ngFor="let slot of pokemon?.types" 
+        [class]="slot?.type?.name + ' chip'"
+      >
+        {{ slot?.type?.name }}
+      </div>
+    </div>
+
+    <div>
+      <img [src]="pokemon?.sprites?.front_default" [alt]="inputData?.name"/>
+    </div>
+  </div>
+</div>

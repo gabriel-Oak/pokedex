@@ -1,13 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
 
 * {
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: 0;
 }
 
 body {
-    background-color: #FAFAFA;
-    font-family: 'Roboto', sans-serif;
+  background-color: #fafafa;
+  font-family: "Roboto", sans-serif;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.mini-card {
+  display: flex;
+  width: 30%;
+  margin-top: 16px;
+  color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.16);
+
+  .grass {
+    background: #17d5a6;
+  }
+
+  .water {
+    background: #03a9f4;
+  }
+
+  .poison {
+    background: #8e24aa;
+  }
+
+  .fire {
+    background: #ff5722;
+  }
+
+  .electric {
+    background: #fdd835;
+  }
+
+  .rock {
+    background: #795548;
+  }
+
+  .flying {
+    background: #22a3ee;
+  }
+
+  .normal {
+    background: #e9be00;
+  }
+
+  .bug {
+    background: #0aa351;
+  }
+}
+
+.mini-card > div:first-of-type {
+  padding: 8px;
+  width: 100%;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: loading 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+
+
+@keyframes loading {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1.5);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(720deg) scale(1);
+  }
 }

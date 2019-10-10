@@ -67,6 +67,7 @@
   box-sizing: border-box;
   padding: 18px;
   position: relative;
+  overflow: auto;
 }
 
 .title-header {
@@ -85,4 +86,37 @@
   margin: auto 20px auto auto;
   height: 1px;
   background-color: #c1c1c1;
+}
+
+button.menu-button { 
+  display: none;
+  z-index: 2;
+  position: absolute;
+  background-color: transparent;
+  border-radius: 50px;
+  min-width: 40px;
+  padding: 0; 
+  top: 0;
+  left: 0;
+  color: #707070;
+}
+
+@media (max-width: 1000px) {
+  button.menu-button { display: block; }
+  .pokedex-container {
+    border-radius: 0 20px 20px 0;
+  }
+
+  .pokedex-menu {
+    position: absolute;
+    z-index: 1;
+    background: white;
+    overflow: hidden;
+    height: calc(100% - 35px);
+    transition: 300ms transform cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+
+  .menu-closed {
+    transform: translate(-100%, 0);
+  }
 }

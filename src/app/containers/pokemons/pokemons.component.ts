@@ -3,21 +3,28 @@ import { AppService } from 'src/app/core/services/app/app.service';
 import { PokemonsService } from 'src/app/core/services/pokemons/pokemons.service';
 
 @Component({
-  selector: 'app-pokemons',
-  templateUrl: './pokemons.component.html',
-  styleUrls: ['./pokemons.component.scss']
+    selector: 'app-pokemons',
+    templateUrl: './pokemons.component.html',
+    styleUrls: ['./pokemons.component.scss']
 })
 export class PokemonsComponent implements OnInit {
 
-  constructor(
-    private app: AppService,
-    public pokeservice: PokemonsService
-  ) { }
+    loadConter: number;
 
-  ngOnInit() {
-    this.app.setClass('grass');
-    this.app.setTitle('Pokemons');
-    this.pokeservice.getPokemons();
-  }
+    constructor(
+        private app: AppService,
+        public pokeservice: PokemonsService
+    ) {
+        this.loadConter = 0;
+    }
 
+    ngOnInit() {
+        this.app.setClass('grass');
+        this.app.setTitle('Pokemons');
+        this.pokeservice.getPokemons();
+    }
+
+    loaded() {
+        this.loadConter++;
+    }
 }

@@ -1,8 +1,17 @@
 <div class="container pokemons">
 
-  <div class="pokemons list">
-    <div *ngFor="let pokemon of pokeservice?.pokemons?.results">
-      {{pokemon.name}}
-    </div>
+  <div class="pokemons">
+    <div class="list" [ngStyle]="{'visibility': loadConter < 20 ? 'hidden' : 'visible'}">
+      <app-pokecard 
+        *ngFor="let pokemon of pokeservice?.pokemons?.results" 
+        [inputData]="pokemon"
+        class="mini-card"
+        (loaded)="loaded()"
+      >
+      </app-pokecard>
+    </div>    
+  </div>
+  <div class="loading" *ngIf="loadConter < 20">
+    <img src="assets/pokeball.png" alt="Carregando">
   </div>
 </div>
