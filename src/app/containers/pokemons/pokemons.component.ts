@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/core/services/app/app.service';
+import { PokemonsService } from 'src/app/core/services/pokemons/pokemons.service';
 
 @Component({
   selector: 'app-pokemons',
@@ -9,12 +10,14 @@ import { AppService } from 'src/app/core/services/app/app.service';
 export class PokemonsComponent implements OnInit {
 
   constructor(
-    private app: AppService
+    private app: AppService,
+    public pokeservice: PokemonsService
   ) { }
 
   ngOnInit() {
     this.app.setClass('grass');
     this.app.setTitle('Pokemons');
+    this.pokeservice.getPokemons();
   }
 
 }
