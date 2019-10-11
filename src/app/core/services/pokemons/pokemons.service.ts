@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class PokemonsService {
 
   pokemons: any;
+  loading: boolean;
 
 
   constructor(
@@ -18,24 +19,36 @@ export class PokemonsService {
   ) { }
 
   getPokemons(): void {
-    this.http.get(`${environment.api}/pokemon`)
+    if (!this.loading) {
+      this.loading = true;
+      this.http.get(`${environment.api}/pokemon`)
       .subscribe(
-        res => this.pokemons = res
+        res => this.pokemons = res,
+        null, () => this.loading = false
       );
+    }
   }
 
   getNextPage(): void {
-    this.http.get(this.pokemons.next)
-      .subscribe(
-        res => this.pokemons = res
-      );
+    if (this.pokemons) {
+      this.loading = true;
+      this.http.get(this.pokemons.next)
+        .subscribe(
+          res => this.pokemons = res,
+          null, () => this.loading = false
+        );
+    }
   }
 
   getPreviusPage(): void {
-    this.http.get(this.pokemons.previus)
+    if (this.pokemons) {
+      this.loading = true;
+      this.http.get(this.pokemons.previous)
       .subscribe(
-        res => this.pokemons = res
+        res => this.pokemons = res,
+        null, () => this.loading = false
       );
+    }
   }
 
   getPokemon(url: string): Observable<any> {

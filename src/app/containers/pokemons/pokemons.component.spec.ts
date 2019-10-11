@@ -33,4 +33,16 @@ describe('PokemonsComponent', () => {
     component.loaded();
     expect(component.loadConter).toBe(1);
   });
+
+  it('Deve trocar pagina anterior', () => {
+    component.navigate('prev');
+
+    expect(component.loadConter).toBe(0);
+  });
+
+  it('Deve trocar pagina seguinte', () => {
+    component.navigate('next');
+
+    expect(component.loadConter).toBe(0);
+  });
 });

@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/core/theme/variables.scss";
 
 * {
   margin: 0;
@@ -28,39 +28,75 @@ body {
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.16);
 
   .grass {
-    background: #17d5a6;
+    background: $grass;
   }
 
   .water {
-    background: #03a9f4;
+    background: $water;
   }
 
   .poison {
-    background: #8e24aa;
+    background: $poison;
   }
 
   .fire {
-    background: #ff5722;
+    background: $fire;
   }
 
   .electric {
-    background: #fdd835;
+    background: $electric;
   }
 
   .rock {
-    background: #795548;
+    background: $rock;
   }
 
   .flying {
-    background: #22a3ee;
+    background: $flying;
   }
 
   .normal {
-    background: #e9be00;
+    background: $normal;
   }
 
   .bug {
-    background: #0aa351;
+    background: $bug;
+  }
+
+  .ground {
+    background: $ground;
+  }
+
+  .fairy {
+    background: $fairy;
+  }
+
+  .fighting {
+    background: $fighting;
+  }
+
+  .psychic {
+    background: $psychic;
+  }
+
+  .ghost {
+    background: $ghost;
+  }
+
+  .ice {
+    background: $ice;
+  }
+
+  .dragon {
+    background: $dragon;
+  }
+
+  .dark {
+    background: $dark;
+  }
+
+  .steel {
+    background: $steel;
   }
 }
 
@@ -77,7 +113,11 @@ body {
   animation: loading 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%; 
+}
 
 @keyframes loading {
   0% {
@@ -88,5 +128,12 @@ body {
   }
   100% {
     transform: translate(-50%, -50%) rotate(720deg) scale(1);
+  }
+}
+
+
+@media (max-width: 700px) {
+  .mini-card {
+    width: 48%;
   }
 }

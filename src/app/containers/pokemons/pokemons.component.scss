@@ -1,0 +1,12 @@
+.button-container {
+  button {
+    box-shadow: none;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+    color: rgb(136, 136, 136);
+  }
+}

@@ -1,7 +1,24 @@
 <div class="container pokemons">
-
+  <div class="button-container">
+    <button 
+      [disabled]="!pokeservice?.pokemons?.previous"
+      (click)="navigate('prev')"
+    >
+      <i class="material-icons">arrow_back</i>
+    </button>
+    Trocar de pagina
+    <button 
+      (click)="navigate('next')"
+      [disabled]="!pokeservice?.pokemons?.next"
+    >
+      <i class="material-icons">arrow_forward</i>
+    </button>
+  </div>
   <div class="pokemons">
-    <div class="list" [ngStyle]="{'visibility': loadConter < 20 ? 'hidden' : 'visible'}">
+    <div 
+      class="list" 
+      [ngStyle]="{'visibility': loadConter < pokeservice?.pokemons?.results?.length ? 'hidden' : 'visible'}"
+    >
       <app-pokecard 
         *ngFor="let pokemon of pokeservice?.pokemons?.results" 
         [inputData]="pokemon"
@@ -11,7 +28,7 @@
       </app-pokecard>
     </div>    
   </div>
-  <div class="loading" *ngIf="loadConter < 20">
+  <div class="loading" *ngIf="loadConter < pokeservice?.pokemons?.results?.length">
     <img src="assets/pokeball.png" alt="Carregando">
   </div>
 </div>

@@ -27,4 +27,11 @@ export class PokemonsComponent implements OnInit {
     loaded() {
         this.loadConter++;
     }
+
+    navigate(param: string) {
+        this.loadConter = 0;
+        param === 'prev'
+        ? this.pokeservice.getPreviusPage()
+        : this.pokeservice.getNextPage();
+    }
 }

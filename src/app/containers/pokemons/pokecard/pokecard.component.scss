@@ -1,3 +1,5 @@
+@import "../../../core/theme/variables.scss";
+
 .data {
   color: white;
   text-transform: Capitalize;
@@ -10,39 +12,75 @@
   }
 
   .grass {
-    background: #15b48d;
+    background: $grass-type;
   }
 
   .water {
-    background: #27bcff;
+    background: $water-type;
   }
 
   .poison {
-    background: #cd3af3;
+    background: $poison-type;
   }
 
   .fire {
-    background: #ff784d;
+    background: $fire-type;
   }
 
   .electric {
-    background: #ffd000;
+    background: $electric-type;
   }
 
   .rock {
-    background: #8d5541;
+    background: $rock-type;
   }
 
   .flying {
-    background: #48b5f3;
+    background: $flying-type;
   }
 
   .normal {
-    background: #d1aa00;
+    background: $normal-type;
   }
 
   .bug {
-    background: #0ccc66;
+    background: $bug-type;
+  }
+
+  .ground {
+    background: $ground-type;
+  }
+
+  .fairy {
+    background: $fairy-type;
+  }
+
+  .fighting {
+    background: $fighting-type;
+  }
+
+  .psychic {
+    background: $psychic-type;
+  }
+
+  .ghost {
+    background: $ghost-type;
+  }
+
+  .ice {
+    background: $ice-type;
+  }
+
+  .dragon {
+    background: $dragon-type;
+  }
+
+  .dark {
+    background: $dark-type;
+  }
+
+  .steel {
+    background: $steel-type;
   }
 }
 
